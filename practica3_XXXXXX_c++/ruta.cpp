@@ -4,7 +4,7 @@ Elemento::Elemento();
 
 Elemento::~Elemento();
 
-virtual int Elemento::obtenerTamanyo() = 0 const;
+virtual int Elemento::obtenerTamanyo(int i = 0) = 0 const;
 
 string devolverNombre(){
 	return nombre;
@@ -14,7 +14,7 @@ Archivo::Archivo();
 
 Archivo::~Archivo();
 
-int Archivo::obtenerTamanyo(){
+int Archivo::obtenerTamanyo(int i = 0){
 	return tamanyo;
 };
 
@@ -24,7 +24,7 @@ Directorio::Directorio();
 
 Directorio::~Directorio();
 
-int Directorio::obtenerTamanyo(){
+int Directorio::obtenerTamanyo(int i = 0){
 	int total = 0;
 	for(const auto& e::elementos){
 		total = e.obtenerTamanyo();
@@ -33,18 +33,20 @@ int Directorio::obtenerTamanyo(){
 };
 
 Enlace::Enlace();
+
 Enlace::~Enlace();
-int Enlace::obtenerTamanyo(){
+
+int Enlace::obtenerTamanyo(int i = 0){
 	return obtenerTamanyoEnlace(0);
 }
 
-int Enlace::obtenerTamanyoEnlace(const int nivel){
-	if(nivel < 1024){
-		total += *ptr.obtenerTamanyo();
-	}
-	else {
-		cout << "puta" << endl;
+int Enlace::obtenerTamanyoEnlace(int i = 0){
+	if (i > 1024){
+		cout "Maximo nivel de recursividad alcanzado jeje" << endl;
 		return 0;
+	}
+	else{
+		return *ptr.obtenerTamanyo(i+1);
 	}
 }
 

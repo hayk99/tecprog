@@ -8,7 +8,7 @@ class Elemento {
 public:
 	Elemento();
 	~Elemento();
-	int obtenerTamanyo();
+	int obtenerTamanyo(int i = 0);
 	string devolverNombre();
 };
 
@@ -17,7 +17,7 @@ class Archivo:Elemento {
 public:
 	Archivo();
 	~Archivo();
-	int obtenerTamanyo();
+	int obtenerTamanyo(int i = 0);
 
 };
 
@@ -27,7 +27,7 @@ class Directorio:Elemento {
 public:
 	Directorio();
 	~Directorio();
-	int obtenerTamanyo();
+	int obtenerTamanyo(int i = 0);
 };
 
 class Enlace:Elemento {
@@ -35,5 +35,5 @@ class Enlace:Elemento {
 public:
 	Enlace();
 	~Enlace();
-	int obtenerTamanyo();
+	int obtenerTamanyo(int i = 0);
 };
