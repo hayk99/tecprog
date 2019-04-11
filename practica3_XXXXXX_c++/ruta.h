@@ -1,23 +1,39 @@
 #pragma once
 
+#include <memory>
+
 class Elemento {
-	int tamnyo;
 	string nombre;
-	std:list 
+
 public:
 	Elemento();
 	~Elemento();
-	obtenerTamanyo();
-	devolverNombre();
-	calcularTamanyo();
+	int obtenerTamanyo();
+	string devolverNombre();
 };
 
 class Archivo:Elemento {
+	int tamanto;
+public:
 	Archivo();
 	~Archivo();
-	calcularTamanyo();
-
+	int obtenerTamanyo();
 
 };
 
-class
+class Directorio:Elemento {
+	std::List<Elemento> elementos;
+	int numElementos;
+public:
+	Directorio();
+	~Directorio();
+	int obtenerTamanyo();
+};
+
+class Enlace:Elemento {
+	std::shared_ptr<Elemento> ptr;
+public:
+	Enlace();
+	~Enlace();
+	int obtenerTamanyo();
+};
