@@ -37,6 +37,10 @@ Enlace::Enlace();
 Enlace::~Enlace();
 
 int Enlace::obtenerTamanyo(int i = 0){
+	return obtenerTamanyoEnlace(0);
+}
+
+int Enlace::obtenerTamanyoEnlace(int i = 0){
 	if (i > 1024){
 		cout "Maximo nivel de recursividad alcanzado jeje" << endl;
 		return 0;
@@ -44,7 +48,8 @@ int Enlace::obtenerTamanyo(int i = 0){
 	else{
 		return *ptr.obtenerTamanyo(i+1);
 	}
-};
+}
+
 
 
 
