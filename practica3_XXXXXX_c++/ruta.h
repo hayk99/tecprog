@@ -26,6 +26,15 @@ class Directorio:Elemento {
 	int numElementos;
 public:
 	Directorio();
+	asdasdasd
+	asd
+	asd
+	a
+	sd
+	asd
+	ads
+
+	asd
 	~Directorio();
 	int obtenerTamanyo(int i = 0);
 };
